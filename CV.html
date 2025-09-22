@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tony Stark - Professional CV showcasing experience as CEO, inventor, and philanthropist specializing in advanced technology and clean energy solutions.">
+    <meta name="keywords" content="CV, resume, Tony Stark, CEO, inventor, technology, clean energy, AI development">
+    <meta name="author" content="Tony Stark">
+    <meta property="og:title" content="Tony Stark - Professional CV">
+    <meta property="og:description" content="Inventor and industrialist dedicated to protecting the world through technology">
+    <meta property="og:type" content="website">
+    <title>Tony Stark - Creative CV</title>
+    <style>
+        :root {
+            --primary-blue: #1a237e;
+            --gradient-start: #667eea;
+            --gradient-end: #764ba2;
+            --accent-coral: #ff7b7b;
+            --accent-gold: #ffd700;
+            --accent-orange: #ff8c00;
+            --text-dark: #333;
+            --text-medium: #555;
+            --text-light: #666;
+            --text-lighter: #888;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --shadow-light: rgba(0,0,0,0.1);
+            --shadow-medium: rgba(0,0,0,0.15);
+            
+            --border-radius: 15px;
+            --border-radius-large: 20px;
+            --spacing-sm: 0.5rem;
+            --spacing-md: 1rem;
+            --spacing-lg: 1.5rem;
+            --spacing-xl: 2rem;
+            
+            --transition-fast: 0.3s ease;
+            --transition-medium: 0.5s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        .skip-nav {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary-blue);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1001;
+            transition: top var(--transition-fast);
+        }
+
+        .skip-nav:focus {
+            top: 6px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 35, 126, 0.95);
+            backdrop-filter: blur(10px);
+            padding: var(--spacing-md) 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 var(--spacing-xl);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: var(--spacing-xl);
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color var(--transition-fast);
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--accent-gold);
+            outline: none;
+        }
+
+        .nav-links a:focus::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--accent-gold);
+        }
+
+        .cv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem 2rem;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 2rem;
+            min-height: calc(100vh - 4rem);
+        }
+
+        .sidebar {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 6rem;
+            height: fit-content;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 2rem 1rem 1.5rem;
+            margin: -2rem -2rem 2rem -2rem;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ffd700, #ff8c00);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin: 0 auto 1rem;
+            border: 4px solid white;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.1) rotate(360deg);
+        }
+
+        .name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .contact-info {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .contact-icon {
+            width: 20px;
+            text-align: center;
+            margin-right: 10px;
+            color: #667eea;
+        }
+
+        .skills-section h3,
+        .languages-section h3,
+        .social-media h3 {
+            color: #1a237e;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .social-media {
+            margin-bottom: 2rem;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #ff7b7b, #667eea);
+        }
+
+        .social-icon:focus {
+            outline: 2px solid #ffd700;
+            outline-offset: 2px;
+        }
+
+        .skill-item,
+        .language-item {
+            margin-bottom: 1rem;
+        }
+
+        .skill-name,
+        .language-name {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .skill-bar,
+        .language-bar {
+            height: 6px;
+            background: #e0e0e0;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-progress,
+        .language-progress {
+            height: 100%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 3px;
+            animation: fillProgress 2s ease-in-out;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #1a237e;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .experience-item,
+        .education-item {
+            background: white;
+            border-radius: 15px;
+            padding: 1.8rem;
+            margin-bottom: 1.8rem;
+            border-left: 4px solid #ff7b7b;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .experience-item:hover,
+        .education-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            border-left-color: #667eea;
+        }
+
+        .experience-item::before,
+        .education-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, rgba(255, 123, 123, 0.08), rgba(102, 126, 234, 0.08));
+            border-radius: 50%;
+            transform: translate(25px, -25px);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.2rem;
+            gap: 1rem;
+        }
+
+        .item-header > div:first-child {
+            flex: 1;
+        }
+
+        .item-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #1a237e;
+            margin-bottom: 0.4rem;
+            line-height: 1.3;
+        }
+
+        .item-company,
+        .item-institution {
+            color: #666;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .item-date {
+            background: linear-gradient(135deg, #ff7b7b, #667eea);
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(255, 123, 123, 0.3);
+        }
+
+        .item-description {
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .item-description p {
+            margin-bottom: 0.8rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .item-location {
+            color: #888;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .item-description ul {
+            list-style: none;
+            padding: 0;
+            margin: 0.8rem 0 0 0;
+        }
+
+        .item-description li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 0.8rem;
+            color: #555;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .item-description li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #ff7b7b;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .item-description li:last-child {
+            margin-bottom: 0;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .achievement-item {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 1.5rem;
+            border-left: 4px solid #ff7b7b;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-left-color: #667eea;
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #ff7b7b, #667eea);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            min-width: 40px;
+        }
+
+        .achievement-content h4 {
+            color: #1a237e;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            font-weight: bold;
+        }
+
+        .achievement-year {
+            background: linear-gradient(135deg, #ff7b7b, #667eea);
+            color: white;
+            padding: 0.2rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-content p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .project-item {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            border-color: #ff7b7b;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .project-header h4 {
+            color: #1a237e;
+            font-size: 1.2rem;
+            margin: 0;
+            flex: 1;
+        }
+
+        .project-status {
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .project-status.completed {
+            background: #e8f5e8;
+            color: #2e7d2e;
+        }
+
+        .project-status.active {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .project-item p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @keyframes fillProgress {
+            from { 
+                width: 0; 
+                opacity: 0.3;
+            }
+            to { 
+                width: var(--progress-width); 
+                opacity: 1;
+            }
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+        }
+
+        #mobile-menu-toggle:checked ~ .nav-container .nav-links {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(26, 35, 126, 0.95);
+                flex-direction: column;
+                padding: 1rem;
+                text-align: center;
+            }
+
+            .cv-container {
+                grid-template-columns: 1fr;
+                padding: 6rem 1rem 2rem;
+                gap: 1rem;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .item-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .item-date {
+                align-self: flex-start;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+                font-size: 1.5rem;
+            }
+
+            .name {
+                font-size: 1.5rem;
+            }
+
+            .contact-info {
+                padding: 1rem;
+            }
+
+            .main-content {
+                padding: 1.5rem;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .achievement-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .achievement-icon {
+                align-self: center;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            nav {
+                display: none;
+            }
+            
+            .cv-container {
+                grid-template-columns: 1fr;
+                padding: 0;
+                max-width: none;
+                margin: 0;
+                gap: 0;
+            }
+            
+            .sidebar,
+            .main-content {
+                box-shadow: none;
+                border-radius: 0;
+                break-inside: avoid;
+            }
+            
+            .experience-item,
+            .education-item,
+            .achievement-item,
+            .project-item {
+                break-inside: avoid;
+                box-shadow: none;
+                margin-bottom: var(--spacing-md);
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="mobile-menu-toggle" class="mobile-menu-toggle">
+        <div class="nav-container">
+            <div class="logo">TONY STARK - CV</div>
+            <label for="mobile-menu-toggle" class="mobile-menu-btn">☰</label>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">← Back to Page</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="cv-container">
+        <div class="sidebar">
+            <div class="profile-section" id="profile">
+                <div class="profile-photo">TS</div>
+                <div class="name">Tony Stark</div>
+                <div class="title">Frontend Developer</div>
+            </div>
+
+            <div class="contact-info">
+                <h3>Contact Info</h3>
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <span>tony@starkindustries.com</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📱</span>
+                    <span>(310) 456-2390</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🏠</span>
+                    <span>10880 Malibu Point, 90265</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">🌐</span>
+                    <span>New York, NY</span>
+                </div>
+            </div>
+
+            <div class="social-media">
+                <h3>Follow Me</h3>
+                <div class="social-icons">
+                    <a href="https://twitter.com/tonystark" class="social-icon" aria-label="Follow Tony Stark on Twitter" target="_blank" rel="noopener">🐦</a>
+                    <a href="https://linkedin.com/in/tonystark" class="social-icon" aria-label="Connect with Tony Stark on LinkedIn" target="_blank" rel="noopener">💼</a>
+                    <a href="https://instagram.com/tonystark" class="social-icon" aria-label="Follow Tony Stark on Instagram" target="_blank" rel="noopener">📷</a>
+                </div>
+            </div>
+
+            <div class="skills-section">
+                <h3>Technical Skills</h3>
+                <div class="skill-item">
+                    <div class="skill-name">Arc Reactor Technology <span>100%</span></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress-width: 100%; width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Suit Design & Engineering <span>98%</span></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress-width: 98%; width: 98%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">AI Development (JARVIS) <span>95%</span></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress-width: 95%; width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Advanced Robotics <span>92%</span></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress-width: 92%; width: 92%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Holographic Interface <span>88%</span></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress-width: 88%; width: 88%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">UI/UX Design <span>80%</span></div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="--progress-width: 80%; width: 80%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="section">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-text">
+                    <p>Inventor visioner dan industrialis ulung yang mendedikasikan hidup untuk melindungi dunia melalui teknologi. Memiliki rekam jejak dalam merancang dan membangun armor canggih, mengembangkan solusi energi bersih, dan memimpin tim pahlawan super. Terampil dalam menyelesaikan masalah di bawah tekanan ekstrem.</p>
+                </div>
+            </div>
+
+            <div class="section" id="experience">
+                <h2 class="section-title">Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">CEO, Stark Industries</div>
+                            <div class="item-company">New York, NY</div>
+                        </div>
+                        <div class="item-date">1991 - Present</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Mengubah perusahaan dari produksi senjata menjadi pemimpin global dalam teknologi energi bersih.</li>
+                            <li>Merancang dan memimpin pengembangan Teknologi Arc Reactor.</li>
+                            <li>Bertanggung jawab atas semua operasional, inovasi, dan filantropi perusahaan.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Founder & Consultant, The Avengers</div>
+                            <div class="item-company">Global</div>
+                        </div>
+                        <div class="item-date">2012 - 2023</div>
+                    </div>
+                    <div class="item-description">
+                        <ul>
+                            <li>Mendirikan tim respons cepat untuk ancaman global.</li>
+                            <li>Menyediakan peralatan, teknologi, dan persenjataan untuk semua anggota tim.</li>
+                            <li>Berpartisipasi aktif dalam berbagai misi penyelamatan dunia.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="education">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="education-item">
+                    <div class="item-header">
+                        <div>
+                            <div class="item-title">Massachusetts Institute of Technology (MIT)</div>
+                            <div class="item-institution">Cambridge, MA</div>
+                        </div>
+                        <div class="item-date">Graduated at 17</div>
+                    </div>
+                    <div class="item-description">
+                        <p>Summa Cum Laude, gelar ganda di bidang Fisika dan Teknik Elektro. Fokus pada kecerdasan buatan dan robotika.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section" id="achievements">
+                <h2 class="section-title">Major Achievements</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">🏆</div>
+                        <div class="achievement-content">
+                            <div class="achievement-year">2008</div>
+                            <h4>Iron Man Mark I</h4>
+                            <p>Developed first arc reactor powered suit in captivity using limited resources.</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">🤖</div>
+                        <div class="achievement-content">
+                            <div class="achievement-year">2010</div>
+                            <h4>JARVIS AI System</h4>
+                            <p>Created advanced AI assistant capable of managing complex operations and suit functions.</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">⚡</div>
+                        <div class="achievement-content">
+                            <div class="achievement-year">2009</div>
+                            <h4>Clean Energy Revolution</h4>
+                            <p>Transformed Stark Industries from weapons manufacturing to clean energy technology.</p>
+                        </div>
+                    </div>
+                    <div class="achievement-item">
+                        <div class="achievement-icon">🌍</div>
+                        <div class="achievement-content">
+                            <div class="achievement-year">2012</div>
+                            <h4>Battle of New York</h4>
+                            <p>Led the Avengers in defending Earth from the Chitauri invasion.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Notable Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h4>Mark 85 Armor</h4>
+                            <span class="project-status completed">Completed</span>
+                        </div>
+                        <p>Latest iteration of Iron Man suit featuring nanotechnology, enhanced durability, and compatibility with Infinity Stones.</p>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h4>Arc Reactor Technology</h4>
+                            <span class="project-status active">Active</span>
+                        </div>
+                        <p>Revolutionary clean energy source powering both personal suits and large-scale industrial applications.</p>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h4>FRIDAY AI</h4>
+                            <span class="project-status active">Active</span>
+                        </div>
+                        <p>Advanced AI system successor to JARVIS, managing global security operations and suit functions.</p>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-header">
+                            <h4>Stark Tower</h4>
+                            <span class="project-status completed">Completed</span>
+                        </div>
+                        <p>Self-sufficient building powered entirely by arc reactor technology, serving as headquarters for operations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    </body>
+</html>
